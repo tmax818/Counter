@@ -1,13 +1,57 @@
 # Counter
 
-Create and display a counter on http://your_server/counter
+- create [MainController](src/main/java/tylermaxwell/counter/MainController.java)
+- add:
+```html
+<!-- Here we have to import the Date class. -->
+<!-- You will put the import in the first line of the jsp tag. Use the import attribute -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.Date"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo JSP</title>
+    </head>
+<body>
+    <!-- Inserting a for loop into your jsp -->
+    <% for(int i = 0; i < 5; i++) { %>
+        <h1><%= i %></h1>
+    <% } %>
+    <p>The time is: <%= new Date() %></p>
+</body>
+</html>
 
-Increment the counter on each visit to http://your_server/
+```
+- [index.jsp](src/main/webapp/WEB-INF/index.jsp)
+- add `spring.mvc.view.prefix=/WEB-INF/` to [application.properties](src/main/resources/application.properties)
+- add:
+```xml
+<dependencies>
+<dependency>
+    <groupId>org.apache.tomcat.embed</groupId>
+    <artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        </dependency>
+</dependencies>    	
 
-Counter must start at zero
 
-No errors regardless of which page is visited first
+```
+to the [pom](pom.xml) file.
 
-NINJA BONUS: Create a third page that will increment the counter by 2
+## Tasks
 
-NINJA BONUS: Create a reset button to set the counter back to zero
+- [ ] Create and display a counter on http://localhost:8080/counter
+
+- [ ] Increment the counter on each visit to http://localhost:8080/
+
+- [ ] Counter must start at zero
+
+- [ ] No errors regardless of which page is visited first
+
+- [ ] NINJA BONUS: Create a third page that will increment the counter by 2
+
+- [ ] NINJA BONUS: Create a reset button to set the counter back to zero
