@@ -11,19 +11,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Demo JSP</title>
+        <title>Counter</title>
     </head>
 <body>
-    <!-- Inserting a for loop into your jsp -->
-    <% for(int i = 0; i < 5; i++) { %>
-        <h1><%= i %></h1>
-    <% } %>
-    <p>The time is: <%= new Date() %></p>
 </body>
 </html>
 
 ```
-- [index.jsp](src/main/webapp/WEB-INF/index.jsp)
+- to [index.jsp](src/main/webapp/WEB-INF/index.jsp)
 - add `spring.mvc.view.prefix=/WEB-INF/` to [application.properties](src/main/resources/application.properties)
 - add:
 ```xml
